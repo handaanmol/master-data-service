@@ -1,0 +1,101 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "order-services",
+        "description": "Microservice for placing an order in the inventory(json)",
+        "version": "1.0.0",
+        "termsOfService": "https://coe.mindtree.com/coe_advwebtech/"
+    },
+    "host": "localhost:9002",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/master/apis/subtypes/": {
+            "get": {
+                "summary": "get worksubtype by from master db ",
+                "description": "get worksubtype by from master db \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {   "name": "categoryCode",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {   "name": "workType",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {   "name": "workSubtype",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "subtype"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "get work subtype from master db operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Error": {
+            "type": "object",
+            "properties": {
+                "code": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "fields": {
+                    "type": "string"
+                }
+            }
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "object"
+                },
+                "status": {
+                    "type": "object"
+                }
+            }
+        },
+        "placeOrder": {
+            "type": "object",
+            "properties": {
+                "gtin": {
+                    "type": "number"
+                },
+                "orderQuantity": {
+                    "type": "number"
+                }
+            }
+        }
+    }
+}

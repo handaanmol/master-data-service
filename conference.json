@@ -1,0 +1,48 @@
+{
+    "a/v_equipment": [
+        {
+            "subTypeCode": "UDL1027078",
+            "subTypeDesc": "repair"
+        },
+        {
+            "subTypeCode": "UDL1027421",
+            "subTypeDesc": "setup"
+        }
+    ],
+    "booking": [
+        {
+            "subTypeCode": "UDL1027424",
+            "subTypeDesc": "room setup"
+        },
+        {
+            "subTypeCode": "UDL1027424",
+            "subTypeDesc": "setup"
+        },
+        {
+            "subTypeCode": "UDL1027425",
+            "subTypeDesc": "seminar"
+        },
+        {
+            "subTypeCode": "UDL1027422",
+            "subTypeDesc": "classroom"
+        }
+    ],
+     "scheduling": [
+        {
+            "subTypeCode": "UDL1027424",
+            "subTypeDesc": "room setup"
+        },
+         {
+            "subTypeCode": "UDL1027424",
+            "subTypeDesc": "setup"
+        },
+        {
+            "subTypeCode": "UDL1027425",
+            "subTypeDesc": "seminar"
+        },
+        {
+            "subTypeCode": "UDL1027422",
+            "subTypeDesc": "classroom"
+        }
+    ]
+}

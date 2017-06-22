@@ -1,0 +1,56 @@
+{
+    "air_vents": [
+        {
+            "subTypeCode": "UDL1027554",
+            "subTypeDesc": "clean"
+        }
+    ],
+    "carpets": [
+        {
+            "subTypeCode": "UDL1027557",
+            "subTypeDesc": "shampoo"
+        },
+        {
+            "subTypeCode": "UDL1027558",
+            "subTypeDesc": "spot clean"
+        },
+        {
+            "subTypeCode": "UDL1027558",
+            "subTypeDesc": "clean"
+        },
+        {
+            "subTypeCode": "UDL1027559",
+            "subTypeDesc": "vacuum"
+        }
+    ],
+    "toilet": [
+        {
+            "subTypeCode": "UDL1027584",
+            "subTypeDesc": "clean"
+        }
+    ],
+    "urinal": [
+        {
+            "subTypeCode": "UDL1027585",
+            "subTypeDesc": "clean"
+        }
+    ],
+    "waste_removal": [
+        {
+            "subTypeCode": "UDL1027589",
+            "subTypeDesc": "equipment disposal"
+        },
+        {
+            "subTypeCode": "UDL1027589",
+            "subTypeDesc": "disposal"
+        },
+        {
+            "subTypeCode": "UDL1027593",
+            "subTypeDesc": "trash pickup"
+        },
+        {
+            "subTypeCode": "UDL1027593",
+            "subTypeDesc": "pickup"
+        }
+    ]
+}
