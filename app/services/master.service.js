@@ -8,10 +8,12 @@ var _ = require('underscore');
 var fs = require('fs');
 var cleaningFile = require('../../cleaning.json')
 var conferenceFile = require('../../conference.json')
+var statusCodesJson = require('../../status-codes.json')
 
 //Creating the object which will finally be exported
 var orderService = {
-    getSubTypeByCategoryCodeAndWorkType: getSubTypeByCategoryCodeAndWorkType
+    getSubTypeByCategoryCodeAndWorkType: getSubTypeByCategoryCodeAndWorkType,
+    getStatusDescFromStatusCode: getStatusDescFromStatusCode
 };
 
 
@@ -38,6 +40,26 @@ function getSubTypeByCategoryCodeAndWorkType(categoryCode, workType, workSubtype
         }
     })
 }
+
+function getStatusDescFromStatusCode(workOrderStatusCodes) {
+    return new Promise(function (resolve, reject) {
+        if (workOrderStatusCodes.length > 0) {
+            var statusCodeTypes = statusCodesJson.codes;
+            var statusResponseArray = [];
+            for (var i = 0; i < workOrderStatusCodes.length; ++i) {
+                var neededWorkOrderStatus = _.findWhere(statusCodeTypes, { code: workOrderStatusCodes[i] });
+                statusResponseArray.push(neededWorkOrderStatus);
+            }
+            logger.info("work order status information fetched successfully from status-codes.json {{IN SERVICE}}");
+            resolve(statusResponseArray);
+        }
+        else {
+            logger.error("couldnt fetch work order status information from status-code json {{IN SERVICE}}");
+            reject("couldnt fetch work order status information from status-code json {{IN SERVICE}}");
+        }
+    })
+}
+
 
 //Exporting allthe methods in an object
 module.exports = orderService;

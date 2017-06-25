@@ -26,15 +26,18 @@
                     "application/json"
                 ],
                 "parameters": [
-                    {   "name": "categoryCode",
+                    {
+                        "name": "categoryCode",
                         "in": "query",
                         "type": "string"
                     },
-                    {   "name": "workType",
+                    {
+                        "name": "workType",
                         "in": "query",
                         "type": "string"
                     },
-                    {   "name": "workSubtype",
+                    {
+                        "name": "workSubtype",
                         "in": "query",
                         "type": "string"
                     }
@@ -45,6 +48,45 @@
                 "responses": {
                     "200": {
                         "description": "get work subtype from master db operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/master/apis/status/": {
+            "post": {
+                "summary": "give array of status code to get back their description",
+                "description": "give array of status code to get back their description \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "statusCodes",
+                        "in": "body",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "tags": [
+                    "status"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "give array of status code to get back their description operation response",
                         "schema": {
                             "$ref": "#/definitions/response"
                         }
