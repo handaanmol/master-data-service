@@ -40,7 +40,7 @@ https://nodejs.org
 1) Check out the code from :
 
 ```sh
-https://github.com/handaanmol/order-service
+https://github.com/handaanmol/master-data-service
 ```
 
 2) Copy the clone URL ( `clone with SSH` ) : copy to clip board.
@@ -50,13 +50,13 @@ https://github.com/handaanmol/order-service
 4) Enter into the "microservices-code" folder, open `Git Bash` and do a
 
 ```sh
-git clone git@github.com:handaanmol/order-service.git
+git clone git@github.com:handaanmol/master-data-service.git
 ```
 
 5) You will get the services folder. Go to the working directory
 
 ```sh
-cd order-services
+cd master-data-service
 ```
 #### Run the App
 1) Install node dependencies
@@ -70,5 +70,5 @@ node index
 #### You can check the swagger url at
 
 LOCAL
-http://localhost:9002/order-services/apis/swagger
+http://localhost:9002/master/apis/docs
 
