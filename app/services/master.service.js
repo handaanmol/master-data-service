@@ -8,6 +8,7 @@ var _ = require('underscore');
 var fs = require('fs');
 var cleaningFile = require('../../cleaning.json')
 var conferenceFile = require('../../conference.json')
+var facultyServiceFile = require('../../faculty.json')
 var statusCodesJson = require('../../status-codes.json')
 
 //Creating the object which will finally be exported
@@ -27,11 +28,18 @@ function getSubTypeByCategoryCodeAndWorkType(categoryCode, workType, workSubtype
             logger.info("subtype fetched successfully for cleaning work type");
             resolve(neededSubType.subTypeCode);
         }
-        else if (categoryCode = "UDL1027076") {
+        else if (categoryCode == "UDL1027076") {
             var conferenceTypes = conferenceFile;
             var availableSubtypes = conferenceTypes[workType]
             var neededSubType = _.findWhere(availableSubtypes, { subTypeDesc: workSubtype });
             logger.info("subtype fetched successfully for conference work type");
+            resolve(neededSubType.subTypeCode);
+        }
+        else if (categoryCode == "UDL1059121") {
+            var facultyServiceTypes = facultyServiceFile;
+            var availableSubtypes = facultyServiceTypes[workType]
+            var neededSubType = _.findWhere(availableSubtypes, { subTypeDesc: workSubtype });
+            logger.info("subtype fetched successfully for faculty service request work type");
             resolve(neededSubType.subTypeCode);
         }
         else {

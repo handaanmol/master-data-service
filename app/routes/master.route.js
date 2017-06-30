@@ -28,7 +28,6 @@ function getSubTypeByCategoryCodeAndWorkType(req, res) {
     workType = workType.split(' ').join('_');
     workType = workType.toLowerCase();
     workSubtype = workSubtype.toLowerCase();
-    console.log("workType changed is -----------------", workType);
     masterService.getSubTypeByCategoryCodeAndWorkType(categoryCode, workType, workSubtype).then(function (result) {
         response.data.workSubtypeCode = result;
         response.status.code = "200";

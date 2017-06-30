@@ -1,0 +1,122 @@
+{
+    "doors": [
+        {
+            "subTypeCode": "UDL1059141",
+            "subTypeDesc": "automatic Door"
+        },
+        {
+            "subTypeCode": "UDL1059142",
+            "subTypeDesc": "door handle"
+        },
+        {
+            "subTypeCode": "UDL1059143",
+            "subTypeDesc": "door hinges"
+        },
+        {
+            "subTypeCode": "UDL1059144",
+            "subTypeDesc": "door open/close issues"
+        },
+        {
+            "subTypeCode": "UDL1059144",
+            "subTypeDesc": "door open issues"
+        },
+        {
+            "subTypeCode": "UDL1059144",
+            "subTypeDesc": "door close issues"
+        },
+        {
+            "subTypeCode": "UDL1059145",
+            "subTypeDesc": "security/lock issue"
+        },
+        {
+            "subTypeCode": "UDL1059145",
+            "subTypeDesc": "security issue"
+        },
+        {
+            "subTypeCode": "UDL1059145",
+            "subTypeDesc": "lock issue"
+        }
+    ],
+    "electric": [
+        {
+            "subTypeCode": "UDL1059148",
+            "subTypeDesc": "install new light or electric outlet"
+        },
+        {
+            "subTypeCode": "UDL1059150",
+            "subTypeDesc": "power outage - widespread"
+        },
+        {
+            "subTypeCode": "UDL1059151",
+            "subTypeDesc": "repair light fixture"
+        },
+        {
+            "subTypeCode": "UDL1059152",
+            "subTypeDesc": "replace bulbs/grates/globes"
+        },
+        {
+            "subTypeCode": "UDL1059152",
+            "subTypeDesc": "replace bulbs"
+        },
+        {
+            "subTypeCode": "UDL1059152",
+            "subTypeDesc": "replace globes"
+        },
+        {
+            "subTypeCode": "UDL1059152",
+            "subTypeDesc": "replace grates"
+        }
+    ],
+    "lights": [
+        {
+            "subTypeCode": "UDL1059148",
+            "subTypeDesc": "install new light or electric outlet"
+        },
+        {
+            "subTypeCode": "UDL1059150",
+            "subTypeDesc": "power outage - widespread"
+        },
+        {
+            "subTypeCode": "UDL1059151",
+            "subTypeDesc": "repair light fixture"
+        },
+        {
+            "subTypeCode": "UDL1059152",
+            "subTypeDesc": "replace bulbs/grates/globes"
+        },
+        {
+            "subTypeCode": "UDL1059152",
+            "subTypeDesc": "replace bulbs"
+        },
+        {
+            "subTypeCode": "UDL1059152",
+            "subTypeDesc": "replace globes"
+        },
+        {
+            "subTypeCode": "UDL1059152",
+            "subTypeDesc": "replace grates"
+        }
+    ],
+     "waste_removal": [
+        {
+            "subTypeCode": "UDL1059252",
+            "subTypeDesc": "confidential material"
+        },
+         {
+            "subTypeCode": "UDL1059253",
+            "subTypeDesc": "empty trash can"
+        },
+        {
+            "subTypeCode": "UDL1059254",
+            "subTypeDesc": "equipment disposal"
+        },
+        {
+            "subTypeCode": "UDL1059255",
+            "subTypeDesc": "hazardous waste removal"
+        },
+        {
+            "subTypeCode": "UDL1059256",
+            "subTypeDesc": "medical waste removal"
+        }
+    ]
+}
