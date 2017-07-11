@@ -100,7 +100,7 @@
                 }
             }
         },
-        "/master/apis/status/{statusCode}": {
+        "/master/apis/status/": {
             "get": {
                 "summary": "give status code to get back their description",
                 "description": "give status code to get back their description \n",
@@ -113,9 +113,8 @@
                 "parameters": [
                     {
                         "name": "statusCode",
-                        "in": "path",
-                        "type": "string",
-                        "required":true
+                        "in": "query",
+                        "type": "string"
                     }
                 ],
                 "tags": [

@@ -17,8 +17,8 @@ function init(router) {
         .get(getSubTypeByCategoryCodeAndWorkType);
     router.route('/status')
          .post(getStatusDescFromStatusCode);
-    router.route('/status/:statusCode')
-         .get(getStatusFromStatusCode);
+    //router.route('/status/:statusCode').get(getStatusFromStatusCode);
+    router.route('/status').get(getStatusFromStatusCode);
 };
 
 
@@ -63,8 +63,8 @@ function getStatusDescFromStatusCode(req, res) {
 
 function getStatusFromStatusCode(req, res) {
     var response = new Response();
-    //var statusCode = req.query.statusCode;
-    var statusCode = req.params.statusCode;
+    var statusCode = req.query.statusCode;
+    //var statusCode = req.params.statusCode;
     masterService.getStatusFromStatusCode(statusCode).then(function (statusResponseArray) {
         response.data = statusResponseArray;
         response.status.code = "200";
