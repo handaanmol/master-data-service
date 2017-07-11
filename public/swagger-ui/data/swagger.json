@@ -114,7 +114,8 @@
                     {
                         "name": "statusCode",
                         "in": "path",
-                        "type": "string"
+                        "type": "string",
+                        "required":true
                     }
                 ],
                 "tags": [
