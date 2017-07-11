@@ -99,6 +99,42 @@
                     }
                 }
             }
+        },
+        "/master/apis/status/{statusCode}": {
+            "get": {
+                "summary": "give status code to get back their description",
+                "description": "give status code to get back their description \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "statusCode",
+                        "in": "path",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "status"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "give status code details to get back their description operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
         }
     },
     "definitions": {

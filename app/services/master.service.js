@@ -14,7 +14,8 @@ var statusCodesJson = require('../../status-codes.json')
 //Creating the object which will finally be exported
 var orderService = {
     getSubTypeByCategoryCodeAndWorkType: getSubTypeByCategoryCodeAndWorkType,
-    getStatusDescFromStatusCode: getStatusDescFromStatusCode
+    getStatusDescFromStatusCode: getStatusDescFromStatusCode,
+    getStatusFromStatusCode: getStatusFromStatusCode
 };
 
 
@@ -64,6 +65,21 @@ function getStatusDescFromStatusCode(workOrderStatusCodes) {
         else {
             logger.error("couldnt fetch work order status information from status-code json {{IN SERVICE}}");
             reject("couldnt fetch work order status information from status-code json {{IN SERVICE}}");
+        }
+    })
+}
+
+function getStatusFromStatusCode(statusCode) {
+    return new Promise(function (resolve, reject) {
+        if (statusCode.length > 0) {
+            var statusCodeTypes = statusCodesJson.codes;
+            var foundStatusDetails = _.findWhere(statusCodeTypes, { code: statusCode });
+            logger.info("Status information fetched successfully from status-codes.json {{IN SERVICE}}");
+            resolve(foundStatusDetails);
+        }
+        else {
+            logger.error("couldnt fetch status information from status-code json {{IN SERVICE}}");
+            reject("couldnt fetch status information from status-code json {{IN SERVICE}}");
         }
     })
 }
