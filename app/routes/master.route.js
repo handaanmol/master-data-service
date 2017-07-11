@@ -18,7 +18,7 @@ function init(router) {
     router.route('/status')
          .post(getStatusDescFromStatusCode);
     //router.route('/status/:statusCode').get(getStatusFromStatusCode);
-    router.route('/status').get(getStatusFromStatusCode);
+    router.route('/status-codes').get(getStatusFromStatusCode);
 };
 
 

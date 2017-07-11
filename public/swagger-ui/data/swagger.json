@@ -100,7 +100,7 @@
                 }
             }
         },
-        "/master/apis/status/": {
+        "/master/apis/status-codes/": {
             "get": {
                 "summary": "give status code to get back their description",
                 "description": "give status code to get back their description \n",
@@ -118,7 +118,7 @@
                     }
                 ],
                 "tags": [
-                    "status"
+                    "status-codes"
                 ],
                 "responses": {
                     "200": {
