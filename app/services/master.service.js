@@ -25,14 +25,15 @@ var orderService = {
     getPrioritiesByPriorityCode: getPrioritiesByPriorityCode
 };
 
-
 function getSubTypeCodeByCategoryCodeTypeAndSubType(categoryCode, typeDesc, subTypeDesc) {
     return new Promise(function (resolve, reject) {
+        typeDesc = searchTextFormat(typeDesc);
+        subTypeDesc = searchTextFormat(subTypeDesc);
         var categoryTypeSubtypeJson = _.findWhere(categoryTypeSubtypeFile, { categoryCode: categoryCode })
         if (categoryTypeSubtypeJson != undefined) {
             var typeSubtypeJson = _.findWhere(categoryTypeSubtypeJson.children, { searchKey: typeDesc })
             if (typeSubtypeJson != undefined) {
-                var subtypeJson = _.findWhere(typeSubtypeJson.children, { subTypeDesc: subTypeDesc })
+                var subtypeJson = _.findWhere(typeSubtypeJson.children, { searchKey: subTypeDesc })
                 if (subtypeJson != undefined) {
                     logger.info("Subtype fetched successfully for categoryCode :: " + categoryCode + ", typeDesc :: " + typeDesc + ", subTypeDesc :: " + subTypeDesc + " from category-type-subtype.json");
                     resolve(subtypeJson.subTypeCode);
@@ -49,6 +50,15 @@ function getSubTypeCodeByCategoryCodeTypeAndSubType(categoryCode, typeDesc, subT
             reject("Category Code given by you doesnt match with anything in database");
         }
     })
+}
+
+function searchTextFormat(value) {
+    value = value.toLowerCase();
+    value = value.split(/\//g).join('_');
+    value = value.split(/\s+/g).join('_');
+    value = value.split(/\-/g).join('_');
+    value = value.split(/_+/g).join('_');
+    return value
 }
 
 function postStatusDescByStatusCode(workOrderStatusCodes) {

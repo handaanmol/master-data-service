@@ -27,9 +27,6 @@ function getSubTypeCodeByCategoryCodeTypeAndSubType(req, res) {
     var categoryCode = req.params.categoryCode;
     var typeDesc = req.params.typeDesc;
     var subTypeDesc = req.params.subTypeDesc;
-    typeDesc = typeDesc.split(' ').join('_');
-    typeDesc = typeDesc.toLowerCase();
-    subTypeDesc = subTypeDesc.toLowerCase();
     masterService.getSubTypeCodeByCategoryCodeTypeAndSubType(categoryCode, typeDesc, subTypeDesc).then(function (result) {
         response.data = result;
         response.status.code = "200";
