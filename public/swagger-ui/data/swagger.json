@@ -15,10 +15,10 @@
         "application/json"
     ],
     "paths": {
-        "/master/apis/subtypes/": {
+        "/v1/master/apis/category/{categoryCode}/typedesc/{typeDesc}/subtypedesc/{subTypeDesc}": {
             "get": {
-                "summary": "get worksubtype by from master db ",
-                "description": "get worksubtype by from master db \n",
+                "summary": "Get Sub Type Code by passing Category Code, Type and SubType from master db ",
+                "description": "Get Sub Type Code by passing Category Code, Type and SubType from master db \n",
                 "consumes": [
                     "application/json"
                 ],
@@ -28,26 +28,26 @@
                 "parameters": [
                     {
                         "name": "categoryCode",
-                        "in": "query",
+                        "in": "path",
                         "type": "string"
                     },
                     {
-                        "name": "workType",
-                        "in": "query",
+                        "name": "typeDesc",
+                        "in": "path",
                         "type": "string"
                     },
                     {
-                        "name": "workSubtype",
-                        "in": "query",
+                        "name": "subTypeDesc",
+                        "in": "path",
                         "type": "string"
                     }
                 ],
                 "tags": [
-                    "subtype"
+                    "SubTypeCodeByCategoryCodeTypeAndSubType"
                 ],
                 "responses": {
                     "200": {
-                        "description": "get work subtype from master db operation response",
+                        "description": "Get Sub Type Code by passing Category Code, Type and SubType from master db operation response",
                         "schema": {
                             "$ref": "#/definitions/response"
                         }
@@ -61,10 +61,11 @@
                 }
             }
         },
-        "/master/apis/status/": {
+
+        "/v1/master/apis/status/": {
             "post": {
-                "summary": "give array of status code to get back their description",
-                "description": "give array of status code to get back their description \n",
+                "summary": "Get Status Details by passing an array of Status Codes from master db",
+                "description": "Get Status Details by passing an array of Status Codes from master db \n",
                 "consumes": [
                     "application/json"
                 ],
@@ -82,11 +83,11 @@
                     }
                 ],
                 "tags": [
-                    "status"
+                    "StatusDescByStatusCode"
                 ],
                 "responses": {
                     "200": {
-                        "description": "give array of status code to get back their description operation response",
+                        "description": "Get Status Details by passing an array of Status Codes from master db operation response",
                         "schema": {
                             "$ref": "#/definitions/response"
                         }
@@ -100,10 +101,10 @@
                 }
             }
         },
-        "/master/apis/status/{statusCode}": {
+        "/v1/master/apis/status/{statusCode}": {
             "get": {
-                "summary": "give status code to get back their description",
-                "description": "give status code to get back their description \n",
+                "summary": "Get Status Details by passing a Status Code from master db",
+                "description": "Get Status Details by passing a Status Code from master db \n",
                 "consumes": [
                     "application/json"
                 ],
@@ -119,11 +120,165 @@
                     }
                 ],
                 "tags": [
-                    "status"
+                    "StatusDescByStatusCode"
                 ],
                 "responses": {
                     "200": {
-                        "description": "give status code details to get back their description operation response",
+                        "description": "Get Status Details by passing a Status Code from master db operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/master/apis/category/{categoryCode}/types": {
+            "get": {
+                "summary": "Get Types by passing Category Code from master db",
+                "description": "Get Types by passing Category Code from master db \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "categoryCode",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "TypesByCategoryCode"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Types by passing Category Code from master db operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/master/apis/category/{categoryCode}/type/{typeCode}/subtypes": {
+            "get": {
+                "summary": "Get SubTypes by Passing CategoryCode and Type from master db",
+                "description": "Get SubTypes by Passing CategoryCode and Type from master db \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "categoryCode",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "typeCode",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "SubTypesByCategoryCodeAndType"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get SubTypes by Passing CategoryCode and Type from master db operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/master/apis/tenants/{tenantCode}": {
+            "get": {
+                "summary": "Get Tenants by Passing Tenant Code which is optional to filter from master db",
+                "description": "Get Tenants by Passing Tenant Code which is optional to filter from master db \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "tenantCode",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "TenantsByTenantCode"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Tenants by Passing Tenant Code which is optional to filter from master db operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/master/apis/priorities/{priorityCode}": {
+            "get": {
+                "summary": "Get Priorities by Passing Priority Code which is optional to filter from master db",
+                "description": "Get Priorities by Passing Priority Code which is optional to filter from master db \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "priorityCode",
+                        "in": "path",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "tags": [
+                    "PrioritiesByPriorityCode"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Priorities by Passing Priority Code which is optional to filter from master db operation response",
                         "schema": {
                             "$ref": "#/definitions/response"
                         }
