@@ -14,12 +14,14 @@ var Promise = require("bluebird");
 //Creating the object to be exported.
 function init(router) {
     router.route('/category/:categoryCode/typedesc/:typeDesc/subtypedesc/:subTypeDesc').get(getSubTypeCodeByCategoryCodeTypeAndSubType);
-    router.route('/status').post(postStatusDescByStatusCode);
+    router.route('/status').post(postStatusByArrayOfStatusCodes);
     router.route('/status/:statusCode').get(getStatusByStatusCode);
     router.route('/category/:categoryCode/types').get(getTypesByCategoryCode);
     router.route('/category/:categoryCode/type/:typeCode/subtypes').get(getSubTypesByCategoryCodeAndType);
-    router.route('/tenants/:tenantCode').get(getTenantsByTenantCode);
-    router.route('/priorities/:priorityCode').get(getPrioritiesByPriorityCode);
+    router.route('/tenants').get(getTenantsByTenantCode);
+    router.route('/tenant/:tenantCode').get(getTenantsByTenantCode);
+    router.route('/priorities').get(getPrioritiesByPriorityCode);
+    router.route('/priority/:priorityCode').get(getPrioritiesByPriorityCode);
 };
 
 function getSubTypeCodeByCategoryCodeTypeAndSubType(req, res) {
@@ -41,10 +43,10 @@ function getSubTypeCodeByCategoryCodeTypeAndSubType(req, res) {
     });
 };
 
-function postStatusDescByStatusCode(req, res) {
+function postStatusByArrayOfStatusCodes(req, res) {
     var response = new Response();
     var workOrderStatusCodes = req.body;
-    masterService.postStatusDescByStatusCode(workOrderStatusCodes).then(function (statusResponseArray) {
+    masterService.postStatusByArrayOfStatusCodes(workOrderStatusCodes).then(function (statusResponseArray) {
         response.data = statusResponseArray;
         response.status.code = "200";
         response.status.message = "fetched the work order status data for status codes :"+workOrderStatusCodes;

@@ -83,7 +83,7 @@
                     }
                 ],
                 "tags": [
-                    "StatusDescByStatusCode"
+                    "StatusByArrayOfStatusCodes"
                 ],
                 "responses": {
                     "200": {
@@ -120,7 +120,7 @@
                     }
                 ],
                 "tags": [
-                    "StatusDescByStatusCode"
+                    "StatusByStatusCode"
                 ],
                 "responses": {
                     "200": {
@@ -218,10 +218,39 @@
                 }
             }
         },
-        "/v1/master/apis/tenants/{tenantCode}": {
+        "/v1/master/apis/tenants": {
             "get": {
-                "summary": "Get Tenants by Passing Tenant Code which is optional to filter from master db",
-                "description": "Get Tenants by Passing Tenant Code which is optional to filter from master db \n",
+                "summary": "Get Tenants from master db",
+                "description": "Get Tenants from master db \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Tenants"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Tenants from master db operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/master/apis/tenant/{tenantCode}": {
+            "get": {
+                "summary": "Get Tenants by Passing Tenant Code from master db",
+                "description": "Get Tenants by Passing Tenant Code from master db \n",
                 "consumes": [
                     "application/json"
                 ],
@@ -241,7 +270,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Get Tenants by Passing Tenant Code which is optional to filter from master db operation response",
+                        "description": "Get Tenants by Passing Tenant Code from master db operation response",
                         "schema": {
                             "$ref": "#/definitions/response"
                         }
@@ -255,10 +284,39 @@
                 }
             }
         },
-        "/v1/master/apis/priorities/{priorityCode}": {
+        "/v1/master/apis/priorities": {
             "get": {
-                "summary": "Get Priorities by Passing Priority Code which is optional to filter from master db",
-                "description": "Get Priorities by Passing Priority Code which is optional to filter from master db \n",
+                "summary": "Get Priorities from master db",
+                "description": "Get Priorities from master db \n",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Priorities"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Get Priorities from master db operation response",
+                        "schema": {
+                            "$ref": "#/definitions/response"
+                        }
+                    },
+                    "500": {
+                        "description": "unexpected error",
+                        "schema": {
+                            "$ref": "#/definitions/Error"
+                        }
+                    }
+                }
+            }
+        },
+        "/v1/master/apis/priority/{priorityCode}": {
+            "get": {
+                "summary": "Get Priority by Passing Priority Code from master db",
+                "description": "Get Priority by Passing Priority Code from master db \n",
                 "consumes": [
                     "application/json"
                 ],
@@ -274,11 +332,11 @@
                     }
                 ],
                 "tags": [
-                    "PrioritiesByPriorityCode"
+                    "PriorityByPriorityCode"
                 ],
                 "responses": {
                     "200": {
-                        "description": "Get Priorities by Passing Priority Code which is optional to filter from master db operation response",
+                        "description": "Get Priority by Passing Priority Code from master db operation response",
                         "schema": {
                             "$ref": "#/definitions/response"
                         }

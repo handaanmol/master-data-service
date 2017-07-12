@@ -17,7 +17,7 @@ var priorityCodesFile = require('../../priority-codes.json')
 //Creating the object which will finally be exported
 var orderService = {
     getSubTypeCodeByCategoryCodeTypeAndSubType: getSubTypeCodeByCategoryCodeTypeAndSubType,
-    postStatusDescByStatusCode: postStatusDescByStatusCode,
+    postStatusByArrayOfStatusCodes: postStatusByArrayOfStatusCodes,
     getStatusByStatusCode: getStatusByStatusCode,
     getTypesByCategoryCode: getTypesByCategoryCode,
     getSubTypesByCategoryCodeAndType: getSubTypesByCategoryCodeAndType,
@@ -61,7 +61,7 @@ function searchTextFormat(value) {
     return value
 }
 
-function postStatusDescByStatusCode(workOrderStatusCodes) {
+function postStatusByArrayOfStatusCodes(workOrderStatusCodes) {
     return new Promise(function (resolve, reject) {
         if (workOrderStatusCodes.length > 0) {
             var statusCodeTypes = statusCodesFile.codes;
@@ -155,7 +155,7 @@ function getSubTypesByCategoryCodeAndType(categoryCode, typeCode) {
 function getTenantsByTenantCode(tenantCode) {
     return new Promise(function (resolve, reject) {
         var allTenantsDetails = tenantCodesFile.codes
-        if (tenantCode.length > 0) {
+        if (tenantCode != undefined) {
             var foundTenantDetails = _.findWhere(allTenantsDetails, { code: tenantCode });
             logger.info("Tenant information fetched successfully from tenant-codes.json {{IN SERVICE}}");
             resolve(foundTenantDetails);
@@ -169,7 +169,7 @@ function getTenantsByTenantCode(tenantCode) {
 function getPrioritiesByPriorityCode(priorityCode) {
     return new Promise(function (resolve, reject) {
         var allPriorityDetails = priorityCodesFile.codes
-        if (priorityCode.length > 0) {
+        if (priorityCode != undefined) {
             var foundPriorityDetails = _.findWhere(allPriorityDetails, { code: priorityCode });
             logger.info("Priority information fetched successfully from tenant-codes.json {{IN SERVICE}}");
             resolve(foundPriorityDetails);
