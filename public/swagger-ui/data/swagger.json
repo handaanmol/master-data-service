@@ -15,7 +15,7 @@
         "application/json"
     ],
     "paths": {
-        "/master/apis/category/{categoryCode}/typedesc/{typeDesc}/subtypedesc/{subTypeDesc}": {
+        "/v1/master/apis/category/{categoryCode}/typedesc/{typeDesc}/subtypedesc/{subTypeDesc}": {
             "get": {
                 "summary": "Get Sub Type Code by passing Category Code, Type and SubType from master db ",
                 "description": "Get Sub Type Code by passing Category Code, Type and SubType from master db \n",
@@ -62,7 +62,7 @@
             }
         },
 
-        "/master/apis/status/": {
+        "/v1/master/apis/status/": {
             "post": {
                 "summary": "Get Status Details by passing an array of Status Codes from master db",
                 "description": "Get Status Details by passing an array of Status Codes from master db \n",
@@ -101,7 +101,7 @@
                 }
             }
         },
-        "/master/apis/status/{statusCode}": {
+        "/v1/master/apis/status/{statusCode}": {
             "get": {
                 "summary": "Get Status Details by passing a Status Code from master db",
                 "description": "Get Status Details by passing a Status Code from master db \n",
@@ -138,7 +138,7 @@
                 }
             }
         },
-        "/master/apis/category/{categoryCode}/types": {
+        "/v1/master/apis/category/{categoryCode}/types": {
             "get": {
                 "summary": "Get Types by passing Category Code from master db",
                 "description": "Get Types by passing Category Code from master db \n",
@@ -175,7 +175,7 @@
                 }
             }
         },
-        "/master/apis/category/{categoryCode}/type/{typeCode}/subtypes": {
+        "/v1/master/apis/category/{categoryCode}/type/{typeCode}/subtypes": {
             "get": {
                 "summary": "Get SubTypes by Passing CategoryCode and Type from master db",
                 "description": "Get SubTypes by Passing CategoryCode and Type from master db \n",
@@ -218,7 +218,7 @@
                 }
             }
         },
-        "/master/apis/tenants": {
+        "/v1/master/apis/tenants": {
             "get": {
                 "summary": "Get Tenants from master db",
                 "description": "Get Tenants from master db \n",
@@ -247,7 +247,7 @@
                 }
             }
         },
-        "/master/apis/tenant/{tenantCode}": {
+        "/v1/master/apis/tenant/{tenantCode}": {
             "get": {
                 "summary": "Get Tenants by Passing Tenant Code from master db",
                 "description": "Get Tenants by Passing Tenant Code from master db \n",
@@ -284,7 +284,7 @@
                 }
             }
         },
-        "/master/apis/priorities": {
+        "/v1/master/apis/priorities": {
             "get": {
                 "summary": "Get Priorities from master db",
                 "description": "Get Priorities from master db \n",
@@ -313,7 +313,7 @@
                 }
             }
         },
-        "/master/apis/priority/{priorityCode}": {
+        "/v1/master/apis/priority/{priorityCode}": {
             "get": {
                 "summary": "Get Priority by Passing Priority Code from master db",
                 "description": "Get Priority by Passing Priority Code from master db \n",
