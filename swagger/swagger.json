@@ -1,19 +1,10 @@
 {
     "swagger": "2.0",
     "info": {
-        "title": "order-services",
-        "description": "Microservice for placing an order in the inventory(json)",
-        "version": "1.0.0",
-        "termsOfService": "https://coe.mindtree.com/coe_advwebtech/"
+        "title": "master-data-services",
+        "description": "Microservice for working on master data (json)",
+        "version": "1.0.0"
     },
-    "host": "localhost:9002",
-    "schemes": [
-        "http"
-    ],
-    "basePath": "/",
-    "produces": [
-        "application/json"
-    ],
     "paths": {
         "/v1/master/apis/category/{categoryCode}/typedesc/{typeDesc}/subtypedesc/{subTypeDesc}": {
             "get": {
@@ -375,17 +366,6 @@
                 },
                 "status": {
                     "type": "object"
-                }
-            }
-        },
-        "placeOrder": {
-            "type": "object",
-            "properties": {
-                "gtin": {
-                    "type": "number"
-                },
-                "orderQuantity": {
-                    "type": "number"
                 }
             }
         }

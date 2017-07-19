@@ -2,19 +2,19 @@
 /**
  * This service file contains the service layer methods for manipulating the master objects.
  */
-var logger = require("../../logger.js");
+var logger = require("./logger.js");
+var categoryTypeSubtypeFile = require('../data/category-type-subtype.json')
+var statusCodesFile = require('../data/status-codes.json')
+var tenantCodesFile = require('../data/tenant-codes.json')
+var priorityCodesFile = require('../data/priority-codes.json')
+
 var Promise = require('bluebird');
 var _ = require('underscore');
 var fs = require('fs');
-// var cleaningFile = require('../../cleaning.json')
-// var conferenceFile = require('../../conference.json')
-// var facultyServiceFile = require('../../faculty.json')
-var categoryTypeSubtypeFile = require('../../category-type-subtype.json')
-var statusCodesFile = require('../../status-codes.json')
-var tenantCodesFile = require('../../tenant-codes.json')
-var priorityCodesFile = require('../../priority-codes.json')
 
-//Creating the object which will finally be exported
+/**
+ * Creating the object which will finally be exported
+ */
 var orderService = {
     getSubTypeCodeByCategoryCodeTypeAndSubType: getSubTypeCodeByCategoryCodeTypeAndSubType,
     postStatusByArrayOfStatusCodes: postStatusByArrayOfStatusCodes,
@@ -52,17 +52,12 @@ function getSubTypeCodeByCategoryCodeTypeAndSubType(categoryCode, typeDesc, subT
     })
 }
 
-function searchTextFormat(value) {
-    value = value.toLowerCase();
-    value = value.split(/\//g).join('_');
-    value = value.split(/\s+/g).join('_');
-    value = value.split(/\-/g).join('_');
-    value = value.split(/_+/g).join('_');
-    return value
-}
-
 function postStatusByArrayOfStatusCodes(workOrderStatusCodes) {
     return new Promise(function (resolve, reject) {
+        // Change string to JSON, unless input is in JSON format
+        try {
+            workOrderStatusCodes = JSON.parse(workOrderStatusCodes);
+        } catch (e) { }
         if (workOrderStatusCodes.length > 0) {
             var statusCodeTypes = statusCodesFile.codes;
             var statusResponseArray = [];
@@ -178,6 +173,15 @@ function getPrioritiesByPriorityCode(priorityCode) {
             resolve(allPriorityDetails);
         }
     })
+}
+
+function searchTextFormat(value) {
+    value = value.toLowerCase();
+    value = value.split(/\//g).join('_');
+    value = value.split(/\s+/g).join('_');
+    value = value.split(/\-/g).join('_');
+    value = value.split(/_+/g).join('_');
+    return value
 }
 
 //Exporting allthe methods in an object

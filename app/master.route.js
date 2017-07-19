@@ -3,15 +3,17 @@
  * This file contains the controller methods related to manipulation of master documents.
  */
 
-//Importing the master service.
-var masterService = require("../services/master.service.js");
-var logger = require("../../logger.js");
-
-//Importing the response object
-var Response = require("../response.js");
+/**
+ * Importing required
+ */
+var masterService = require("./master.service.js");
+var Response = require("./response.js");
+var logger = require("./logger.js");
 var Promise = require("bluebird");
 
-//Creating the object to be exported.
+/**
+ * Creating the object to be exported.
+ */
 function init(router) {
     router.route('/category/:categoryCode/typedesc/:typeDesc/subtypedesc/:subTypeDesc').get(getSubTypeCodeByCategoryCodeTypeAndSubType);
     router.route('/status').post(postStatusByArrayOfStatusCodes);
@@ -145,6 +147,5 @@ function getPrioritiesByPriorityCode(req, res) {
         res.status(500).json(response);
     });
 };
-
 
 module.exports.init = init;
