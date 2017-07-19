@@ -4,8 +4,8 @@
  */
 var masterDataRoute = require("./app/master.route.js");
 var swagger = require("./swagger/swagger.json");
-var corsFilter = require("./cors/cors.filter");
-var logger = require("./app/logger.js");
+var corsFilter = require("./common/cors.filter");
+var logger = require("./common/logger.js");
 
 /**
  * Set up npm modules

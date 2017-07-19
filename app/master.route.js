@@ -7,8 +7,8 @@
  * Importing required
  */
 var masterService = require("./master.service.js");
-var Response = require("./response.js");
-var logger = require("./logger.js");
+var Response = require("../common/response.js");
+var logger = require("../common/logger.js");
 var Promise = require("bluebird");
 
 /**

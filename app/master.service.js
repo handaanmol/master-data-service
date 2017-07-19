@@ -2,7 +2,7 @@
 /**
  * This service file contains the service layer methods for manipulating the master objects.
  */
-var logger = require("./logger.js");
+var logger = require("../common/logger.js");
 var categoryTypeSubtypeFile = require('../data/category-type-subtype.json')
 var statusCodesFile = require('../data/status-codes.json')
 var tenantCodesFile = require('../data/tenant-codes.json')
