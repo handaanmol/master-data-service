@@ -244,52 +244,6 @@
                 }
             }
         },
-        "/api/v1/master/categories/{categoryCode}/typedesc/{typeDesc}/subtypedesc/{subTypeDesc}": {
-            "get": {
-                "summary": "Get Work Order Sub Type Code for a given Category, Type and Sub Type",
-                "description": "Get Work Order Sub Type Code for a given Category, Type and Sub Type \n",
-                "consumes": [
-                    "application/json"
-                ],
-                "produces": [
-                    "application/json"
-                ],
-                "parameters": [
-                    {
-                        "name": "categoryCode",
-                        "in": "path",
-                        "type": "string"
-                    },
-                    {
-                        "name": "typeDesc",
-                        "in": "path",
-                        "type": "string"
-                    },
-                    {
-                        "name": "subTypeDesc",
-                        "in": "path",
-                        "type": "string"
-                    }
-                ],
-                "tags": [
-                    "Work Order Categories, Types and Sub Types"
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Work Order Sub Type",
-                        "schema": {
-                            "$ref": "#/definitions/response"
-                        }
-                    },
-                    "500": {
-                        "description": "unexpected error",
-                        "schema": {
-                            "$ref": "#/definitions/Error"
-                        }
-                    }
-                }
-            }
-        },
         "/api/v1/master/tenants": {
             "get": {
                 "summary": "Get list of Tenants",
