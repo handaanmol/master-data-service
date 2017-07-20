@@ -46,7 +46,7 @@ corsFilter(router);
 /**
  * Configure routes for the services
  */
-app.use('/api/v1/master-services', router);
+app.use('/api/v1/master', router);
 masterDataRoute.init(router);
 
 /**
@@ -61,7 +61,7 @@ app.get('/swagger', function(req, res) {
 /**
  * Endpoint for Swagger UI
  */
-app.use('/api/v1/master-services/docs', swaggerUi({
+app.use('/api/v1/master/docs', swaggerUi({
   docs: '/swagger'
 }));
 

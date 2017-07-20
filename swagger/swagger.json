@@ -6,7 +6,7 @@
         "version": "1.0.0"
     },
     "paths": {
-        "/api/v1/master-services/categories": {
+        "/api/v1/master/categories": {
             "get": {
                 "summary": "Get Categories",
                 "description": "Get Categories \n",
@@ -35,7 +35,7 @@
                 }
             }
         },
-        "/api/v1/master-services/categories/{categoryCode}": {
+        "/api/v1/master/categories/{categoryCode}": {
             "get": {
                 "summary": "Get Work Order Categories for a given Category Code",
                 "description": "Get Work Order Categories for a given Category Code \n",
@@ -72,7 +72,7 @@
                 }
             }
         },
-        "/api/v1/master-services/categories/{categoryCode}/types": {
+        "/api/v1/master/categories/{categoryCode}/types": {
             "get": {
                 "summary": "Get Work Order Types for a given Category Code",
                 "description": "Get Work Order Types for a given Category Code \n",
@@ -109,7 +109,7 @@
                 }
             }
         },
-        "/api/v1/master-services/categories/{categoryCode}/types/{typeCode}": {
+        "/api/v1/master/categories/{categoryCode}/types/{typeCode}": {
             "get": {
                 "summary": "Get Work Order Types for a given Category Code and Type Code",
                 "description": "Get Work Order Types for a given Category Code and Type Code \n",
@@ -152,7 +152,7 @@
                 }
             }
         },
-        "/api/v1/master-services/categories/{categoryCode}/types/{typeCode}/subtypes": {
+        "/api/v1/master/categories/{categoryCode}/types/{typeCode}/subtypes": {
             "get": {
                 "summary": "Get Work Order Sub Types for a given Category Code and Type",
                 "description": "Get Work Order Sub Types for a given Category Code and Type \n",
@@ -195,7 +195,7 @@
                 }
             }
         },
-        "/api/v1/master-services/categories/{categoryCode}/types/{typeCode}/subtypes/{subTypes}": {
+        "/api/v1/master/categories/{categoryCode}/types/{typeCode}/subtypes/{subTypes}": {
             "get": {
                 "summary": "Get Work Order Sub Types for a given Category Code, Type Code and SubType Code",
                 "description": "Get Work Order Sub Types for a given Category Code, Type Code and SubType Code \n",
@@ -244,7 +244,7 @@
                 }
             }
         },
-        "/api/v1/master-services/categories/{categoryCode}/typedesc/{typeDesc}/subtypedesc/{subTypeDesc}": {
+        "/api/v1/master/categories/{categoryCode}/typedesc/{typeDesc}/subtypedesc/{subTypeDesc}": {
             "get": {
                 "summary": "Get Work Order Sub Type Code for a given Category, Type and Sub Type",
                 "description": "Get Work Order Sub Type Code for a given Category, Type and Sub Type \n",
@@ -290,7 +290,7 @@
                 }
             }
         },
-        "/api/v1/master-services/tenants": {
+        "/api/v1/master/tenants": {
             "get": {
                 "summary": "Get list of Tenants",
                 "description": "Get list of Tenants \n",
@@ -319,7 +319,7 @@
                 }
             }
         },
-        "/api/v1/master-services/tenants/{tenantCode}": {
+        "/api/v1/master/tenants/{tenantCode}": {
             "get": {
                 "summary": "Get Tenant for a given Tenant Code",
                 "description": "Get Tenant for a given Tenant Code \n",
@@ -356,7 +356,7 @@
                 }
             }
         },
-        "/api/v1/master-services/priorities": {
+        "/api/v1/master/priorities": {
             "get": {
                 "summary": "Get list of Work Order Priorities",
                 "description": "Get list of Work Order Priorities \n",
@@ -385,7 +385,7 @@
                 }
             }
         },
-        "/api/v1/master-services/priorities/{priorityCode}": {
+        "/api/v1/master/priorities/{priorityCode}": {
             "get": {
                 "summary": "Get Work Order Priority for a given Priority Code",
                 "description": "Get Work Order Priority for a given Priority Code \n",
@@ -423,7 +423,7 @@
             }
         },
 
-        "/api/v1/master-services/statuses": {
+        "/api/v1/master/statuses": {
             "get": {
                 "summary": "Get Status details",
                 "description": "Get Status details \n",
@@ -452,7 +452,7 @@
                 }
             }
         },
-        "/api/v1/master-services/statuses/{statusCode}": {
+        "/api/v1/master/statuses/{statusCode}": {
             "get": {
                 "summary": "Get Status details for a given Status Code",
                 "description": "Get Status details for a given Status Code \n",
@@ -489,7 +489,7 @@
                 }
             }
         },
-        "/api/v1/master-services/statuses/": {
+        "/api/v1/master/statuses/": {
             "post": {
                 "summary": "Get Status details for a given set of Status Codes",
                 "description": "Get Status details for a given set of Status Codes \n",
