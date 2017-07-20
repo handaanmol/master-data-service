@@ -14,12 +14,16 @@ var swaggerUi = require('swaggerize-ui');
 var bodyParser = require("body-parser");
 var morganLogger = require("morgan");
 var express = require("express");
-var router = express.Router();
 var fs = require('fs');
-var app = express();
 
 /**
- * HTTP request logger middleware for node.js
+ * Initialize the Express server and its router
+ */
+var app = express();
+var router = express.Router();
+
+/**
+ * Initialize logging middleware
  */
 app.use(morganLogger('dev'));
 // Create the log directory if it does not exist
@@ -28,21 +32,21 @@ if (!fs.existsSync("logs")) {
 }
 
 /**
- * Seeting Limits
+ * Setting limits
  */
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ limit: '10mb', "extended": false }));
 
 /**
- * Cross-Origin Resource Sharing (CORS) to gives web servers cross-domain access controls, which enable secure cross-domain data transfers.
+ * Cross-Origin Resource Sharing (CORS) to gives web servers cross-domain access controls,
+ * which enable secure cross-domain data transfers.
  */
 corsFilter(router);
 
 /**
- * Endpoint for Our Custom Services
- * Defining routes
+ * Configure routes for the services
  */
-app.use('/v1/master/apis', router);
+app.use('/api/v1/master-services', router);
 masterDataRoute.init(router);
 
 /**
@@ -57,7 +61,7 @@ app.get('/swagger', function(req, res) {
 /**
  * Endpoint for Swagger UI
  */
-app.use('/v1/master/apis/docs', swaggerUi({
+app.use('/api/v1/master-services/docs', swaggerUi({
   docs: '/swagger'
 }));
 
@@ -66,7 +70,7 @@ app.use('/v1/master/apis/docs', swaggerUi({
  */
 app.use(function (err, req, res, next) {
     console.error(err.stack);
-    res.status(500).send('Something broke in the server!');
+    res.status(500).send('Sorry, something went wrong in the server!');
 });
 
 /**
@@ -78,7 +82,7 @@ function start() {
   app.listen(port, '0.0.0.0', function() {
     logger.info("Listening on : ", port);
   });
-  logger.info("Express server listening on port %d ", port);
+  logger.info("Master data service listening on port %d ", port);
 }
 
 /**
