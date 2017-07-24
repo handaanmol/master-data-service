@@ -457,9 +457,11 @@
                     {
                         "name": "statusCodes",
                         "in": "body",
-                        "type": "array",
-                        "items": {
-                            "type": "string"
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
                         }
                     }
                 ],
